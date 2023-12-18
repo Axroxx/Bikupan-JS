@@ -1,0 +1,73 @@
+ body, html {
+      background-size: cover;
+      background-color: black; 
+    }    
+
+    .hex {
+      float: left;
+      margin-right: 100px;
+      position: relative;
+      width: 42px;
+      height: 70px;
+    }
+    
+    .hex::before,
+    .hex::after {
+      content: "";
+      position: absolute;
+      border-top: 36px solid transparent;
+      border-bottom: 35px solid transparent;
+    }
+
+    .hex::before {
+      left: -22px;
+      border-right: 22px solid #FFF;
+    }
+
+    .hex::after {
+      right: -22px;
+      border-left: 22px solid #FFF;
+    }
+
+    .hex-container {
+      clear: left;
+    }
+
+    .hex.l1,
+    .hex.l2,
+    .hex.l3,
+    .hex.b1,
+    .hex.b2 {
+      background-color: white;
+      position: relative;
+      display: flex;
+      font-size: 40px; /* Adjust the font size as needed */
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      font-family: arial;
+      margin-top: -30px;
+      top: 50px;
+    }
+
+    .hex.l1,
+    .hex.b1 {
+      left: 110px;
+    }
+
+    .hex.l2,
+    .hex.l3 {
+      left: 40px;
+    }
+
+    .hex.b2 {
+      left: 182px;
+    }
+
+    .hex.b1,
+    .hex.b2 {
+      color: #FFDB58;
+      background-image:url(Bee.svg);
+      background-repeat: no-repeat;
+      background-position: -10%;
+    }

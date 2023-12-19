@@ -1,73 +1,131 @@
- body, html {
-      background-size: cover;
-      background-color: black; 
-    }    
+body, html {
+  background-size: cover;
+  background-color: rgb(36, 36, 36); 
+}
 
-    .hex {
-      float: left;
-      margin-right: 100px;
-      position: relative;
-      width: 42px;
-      height: 70px;
-    }
-    
-    .hex::before,
-    .hex::after {
-      content: "";
-      position: absolute;
-      border-top: 36px solid transparent;
-      border-bottom: 35px solid transparent;
-    }
+.grid-container {
+  display: grid;
+  grid-template-columns: 60vh auto; /* Two columns: 70% hive, auto forms */
+}
 
-    .hex::before {
-      left: -22px;
-      border-right: 22px solid #FFF;
-    }
+.hive-container {
+  flex: 1; /* Your existing styles for .hive-container */
+}
 
-    .hex::after {
-      right: -22px;
-      border-left: 22px solid #FFF;
-    }
+.forms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-    .hex-container {
-      clear: left;
-    }
+.column {
+  display: flex;
+}
 
-    .hex.l1,
-    .hex.l2,
-    .hex.l3,
-    .hex.b1,
-    .hex.b2 {
-      background-color: white;
-      position: relative;
-      display: flex;
-      font-size: 40px; /* Adjust the font size as needed */
-      font-weight: bold;
-      justify-content: center;
-      align-items: center;
-      font-family: arial;
-      margin-top: -30px;
-      top: 50px;
-    }
+.hex {
+  float: left;
+  margin-right: 100px;
+  position: relative;
+  width: 42px;
+  height: 70px;
+}
 
-    .hex.l1,
-    .hex.b1 {
-      left: 110px;
-    }
+.hex::before,
+.hex::after {
+  content: "";
+  position: absolute;
+  border-top: 36px solid transparent;
+  border-bottom: 35px solid transparent;
+}
 
-    .hex.l2,
-    .hex.l3 {
-      left: 40px;
-    }
+.hex::before {
+  left: -22px;
+  border-right: 22px solid #FFF;
+}
 
-    .hex.b2 {
-      left: 182px;
-    }
+.hex::after {
+  right: -22px;
+  border-left: 22px solid #FFF;
+}
 
-    .hex.b1,
-    .hex.b2 {
-      color: #FFDB58;
-      background-image:url(Bee.svg);
-      background-repeat: no-repeat;
-      background-position: -10%;
-    }
+.hex-container {
+  clear: left;
+}
+
+.hex.l1,
+.hex.l2,
+.hex.l3,
+.hex.b1,
+.hex.b2 {
+  background-color: white;
+  position: relative;
+  display: flex;
+  font-size: 40px; /* Adjust the font size as needed */
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  font-family: arial;
+  margin-top: -30px;
+  top: 50px;
+}
+
+.hex.l1,
+.hex.b1 {
+  left: 110px;
+}
+
+.hex.l2,
+.hex.l3 {
+  left: 40px;
+}
+
+.hex.b2 {
+  left: 182px;
+}
+
+.hex.b1,
+.hex.b2 {
+  color: #FFAA00;
+  background-image: url(Bee.svg);
+  background-repeat: no-repeat;
+  background-position: -10%;
+}
+
+.reset-button, .submit-button {
+  border-radius: 10%;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight:bold;
+  cursor: pointer;
+  position: absolute;
+  left: 23vh;
+  top: 80vh;
+  background-color: #ff0000;
+  
+}
+
+.submit-button {
+  cursor: pointer;
+  left: 65vh;
+  top: 80vh;
+  background-color: white;
+  
+}
+
+.form {
+  margin-bottom: 10px;
+}
+
+.form input {
+  width: 200px;
+  padding: 5px;
+  margin-right: 00px;
+}
+
+.form button {
+  cursor: pointer;
+}

@@ -86,7 +86,7 @@ body, html {
 .hex.b1,
 .hex.b2 {
   color: #FFAA00;
-  background-image: url(Bee.svg);
+  background-image: url('Bee.svg');
   background-repeat: no-repeat;
   background-position: -10%;
 }

@@ -31,8 +31,8 @@ x = 22
 
 start = hexClass(x,"E","R","F","A","R","A","ERFARA",True)
     
-
+print(sys.argv[1])
 
 # Don't touch
-main(words, x, start)
+#main(words, x, start)
 

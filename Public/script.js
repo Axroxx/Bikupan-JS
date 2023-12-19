@@ -62,55 +62,45 @@ for (let i = 1; i <= 25; i++) {
   var input = document.createElement('input');
   input.type = 'text';
   input.placeholder = 'Word nr ' + i;
+  input.setAttribute('data-hex-id', i);
 
   form.appendChild(input);
 
   formsContainer.appendChild(form);
 }
 
-// Submit button
-
+// Submit button click event
+// Submit button click event
 const submit_button = document.querySelector('.submit-button');
 
-submit_button.addEventListener('click', e => {
+submit_button.addEventListener('click', function () {
   const forms = document.querySelectorAll('.form');
-
-  // Create an array to store input values
   const inputValues = [];
 
-  // Iterate over each form
   forms.forEach(form => {
-    // Get the input element within the form
     const input = form.querySelector('input');
-
-    // Get the input value
     const inputValue = input.value;
-
-    // Add the input value to the array
-    inputValues.push(inputValue);
+    const hexId = input.getAttribute('data-hex-id');
+    inputValues.push({ hexId, inputValue });
   });
 
-  // Print the input values to the console
+  // Log the input values (you can modify this part to send data to the server)
   console.log(inputValues);
 
-})
-
-// Reset button 
-
-const reset_button = document.querySelector('.reset-button');
-
-reset_button.addEventListener('click', e => {
-  const forms = document.querySelectorAll('.form');
-
-  // Iterate over each form
-  forms.forEach(form => {
-    // Get the input element within the form
-    const input = form.querySelector('input');
-
-    // Reset the input value to an empty string
-    input.value = '';
-  });
-
-})
-
-
+  // Send the data to the server using AJAX (you can use fetch or other methods)
+  fetch('/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ inputValues }),
+  })
+    .then(response => response.text())
+    .then(data => {
+      console.log('Server response:', data);
+      // Handle the server response if needed
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+});
